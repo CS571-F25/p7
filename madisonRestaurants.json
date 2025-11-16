@@ -132,20 +132,7 @@
       "price": "$$$",
       "rating": 4.4
     },
-    {
-      "name": "Just Veggiez",
-      "address": "540 State St, Madison, WI 53703",
-      "cuisine": "Vegan / Vegetarian",
-      "price": "$$",
-      "rating": 4.2
-    },
-    {
-      "name": "Himal Chuli Restaurant",
-      "address": "318 State St, Madison, WI 53703",
-      "cuisine": "Nepali / Indian",
-      "price": "$$",
-      "rating": 4.0
-    },
+    
     {
       "name": "Ian's Pizza (State Street)",
       "address": "100 State St, Madison, WI",
@@ -153,13 +140,7 @@
       "price": "$",
       "rating": 4.4
     },
-    {
-      "name": "Southern on State",
-      "address": "217 State St, Madison, WI",
-      "cuisine": "Southern / Comfort Food",
-      "price": "$$",
-      "rating": 4.0
-    },
+   
     {
       "name": "Lucille",
       "address": "101 King St, Madison, WI 53703",

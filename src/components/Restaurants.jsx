@@ -1,5 +1,8 @@
-import React from "react";
-import restaurantsData from "../../madisonRestaurants.json"; // Adjust path if needed
+import { useState } from "react";
+import { Row, Col } from "react-bootstrap";
+import restaurantsData from "../../madisonRestaurants.json"; // adjust path
+import RestaurantSummary from "../RestaurantSummary";
+
 
 export default function Restaurants() {
   const handleReservation = (restaurant) => {
@@ -7,58 +10,20 @@ export default function Restaurants() {
   };
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>Restaurants</h1>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
+        Restaurants in Madison
+      </h1>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "20px",
-        }}
-      >
-        {Array.isArray(restaurantsData) && restaurantsData.length > 0 ? (
-          restaurantsData.map((restaurant, index) => (
-            <div
-              key={index}
-              style={{
-                border: "1px solid #ccc",
-                borderRadius: "8px",
-                padding: "16px",
-                boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <h2>{restaurant.title}</h2>
-                <p><strong>Address:</strong> {restaurant.address}</p>
-                <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
-                <p><strong>Price:</strong> {restaurant.price}</p>
-                <p><strong>Rating:</strong> {restaurant.rating} ⭐</p>
-              </div>
+      {restaurantsData.length === 0 && <p>No restaurants available!</p>}
 
-              <button
-                onClick={() => handleReservation(restaurant)}
-                style={{
-                  marginTop: "12px",
-                  padding: "10px 20px",
-                  borderRadius: "4px",
-                  border: "1px solid #007bff",
-                  backgroundColor: "#007bff",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                Reserve
-              </button>
-            </div>
-          ))
-        ) : (
-          <p>No restaurants available</p>
-        )}
-      </div>
+      <Row>
+        {restaurantsData.map((restaurant) => (
+          <Col key={restaurant.name} xs={12} sm={6} md={4} lg={3} className="mb-4">
+            <RestaurantSummary restaurant={restaurant} onReserve={handleReservation} />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 }
