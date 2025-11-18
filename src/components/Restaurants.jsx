@@ -1,64 +1,66 @@
-import React from "react";
-import restaurantsData from "../../madisonRestaurants.json"; // Adjust path if needed
+import { useState } from "react";
+import { Row, Col } from "react-bootstrap";
+import { useNavigate } from 'react-router'
+import restaurantsData from "../../madisonRestaurants.json"; // adjust path
+import RestaurantSummary from "../RestaurantSummary";
 
 export default function Restaurants() {
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></link>
+    //<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
+  const navigate = useNavigate()
+
   const handleReservation = (restaurant) => {
-    alert(`You clicked Reserve for ${restaurant.title}`);
+    // navigate to reserve page and pass restaurant data in state
+    navigate('/reserve', { state: { restaurant } })
   };
 
   return (
-    <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>Restaurants</h1>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: "20px",
-        }}
-      >
-        {Array.isArray(restaurantsData) && restaurantsData.length > 0 ? (
-          restaurantsData.map((restaurant, index) => (
-            <div
-              key={index}
-              style={{
-                border: "1px solid #ccc",
-                borderRadius: "8px",
-                padding: "16px",
-                boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <div>
-                <h2>{restaurant.title}</h2>
-                <p><strong>Address:</strong> {restaurant.address}</p>
-                <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
-                <p><strong>Price:</strong> {restaurant.price}</p>
-                <p><strong>Rating:</strong> {restaurant.rating} ⭐</p>
-              </div>
-
-              <button
-                onClick={() => handleReservation(restaurant)}
-                style={{
-                  marginTop: "12px",
-                  padding: "10px 20px",
-                  borderRadius: "4px",
-                  border: "1px solid #007bff",
-                  backgroundColor: "#007bff",
-                  color: "white",
-                  cursor: "pointer",
-                }}
-              >
-                Reserve
-              </button>
-            </div>
-          ))
-        ) : (
-          <p>No restaurants available</p>
-        )}
+    <div>
+   <h1 style={{
+  textAlign: "center",
+  marginBottom: "20px",
+  fontFamily: "'Lobster', cursive",
+}}>
+  Restaurants in Madison
+</h1>
+   
+      <div style={{ maxWidth: "400px", margin: "0 auto 20px auto" }}>
+        <input 
+          type="text"
+          placeholder="Search restaurants"
+          style={{
+            width: "100%",
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            color: "#555",
+            fontSize: "16px",
+            backgroundColor: "#f9f9f9"
+          }}
+        />
       </div>
+
+      
+
+      {restaurantsData.length === 0 && <p>No restaurants available!</p>}
+
+      <Row>
+        {restaurantsData.map((restaurant) => (
+          <Col
+            key={restaurant.name}
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            className="mb-4"
+          >
+            <RestaurantSummary
+              restaurant={restaurant}
+              onReserve={handleReservation}
+            />
+          </Col>
+        ))}
+      </Row>
     </div>
   );
 }
