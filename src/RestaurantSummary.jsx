@@ -2,6 +2,7 @@ import { Card, Button } from "react-bootstrap";
 import { useState } from "react";
 
 export default function RestaurantSummary({ restaurant, onReserve }) {
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -11,11 +12,12 @@ export default function RestaurantSummary({ restaurant, onReserve }) {
         borderRadius: "12px",
         overflow: "hidden",
         transition: "transform 0.2s",
+        
       }}
     >
       <Card.Body className="d-flex flex-column">
      
-        <Card.Title style={{ fontWeight: "600", fontSize: "1.25rem" }}>
+        <Card.Title style={{ fontWeight: "600", fontSize: "1.25rem" , fontFamily: "'Bebas Neue', sans-serif"}}>
           {restaurant.name}
         </Card.Title>
         <Card.Text style={{ fontStyle: "italic", color: "#555" }}>
@@ -52,7 +54,6 @@ export default function RestaurantSummary({ restaurant, onReserve }) {
           </div>
         )}
 
-        {/* Buttons */}
         <div className="mt-auto d-flex justify-content-between">
           <Button
             variant="outline-primary"

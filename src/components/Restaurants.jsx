@@ -4,17 +4,21 @@ import restaurantsData from "../../madisonRestaurants.json"; // adjust path
 import RestaurantSummary from "../RestaurantSummary";
 
 export default function Restaurants() {
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></link>
+    //<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const handleReservation = (restaurant) => {
     alert(`You clicked Reserve for ${restaurant.title}`);
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      
-      <h1 style={{ textAlign: "center", marginBottom: "30px" }}>
-        Restaurants in Madison
-      </h1>
-
+    <div>
+   <h1 style={{
+  textAlign: "center",
+  marginBottom: "20px",
+  fontFamily: "'Lobster', cursive",
+}}>
+  Restaurants in Madison
+</h1>
    
       <div style={{ maxWidth: "400px", margin: "0 auto 20px auto" }}>
         <input 
