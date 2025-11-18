@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from 'react-router'
 import restaurantsData from "../../madisonRestaurants.json"; // Adjust path if needed
 
 export default function Restaurants() {
+  const navigate = useNavigate()
+
   const handleReservation = (restaurant) => {
-    alert(`You clicked Reserve for ${restaurant.title}`);
+    // navigate to reserve page and pass restaurant data in state
+    navigate('/reserve', { state: { restaurant } })
   };
 
   return (
@@ -32,7 +36,7 @@ export default function Restaurants() {
               }}
             >
               <div>
-                <h2>{restaurant.title}</h2>
+                <h2>{restaurant.name}</h2>
                 <p><strong>Address:</strong> {restaurant.address}</p>
                 <p><strong>Cuisine:</strong> {restaurant.cuisine}</p>
                 <p><strong>Price:</strong> {restaurant.price}</p>
