@@ -1,8 +1,7 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -39,4 +38,116 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Add a Navigation bar to the top of every page. Must be uniform size */
+.site-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  background: linear-gradient(
+    to right,
+    #dfe8ff,
+    #ffe8e8
+  );
+
+  border-bottom: 1px solid #ddd;
+  z-index: 1000;
+}
+/* Links to the other pages */
+.nav-item {
+  padding: 10px 18px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.nav-item.active {
+  background-color: #7e95ff;
+  color: white;
+}
+
+.nav-item:hover {
+  background-color: #dcdcff;
+}
+
+.page-content {
+  margin-top: 2rem;
+}
+
+.page-wrapper {
+  padding-top: 140px;
+  width: 100%;
+  max-width: 1800px;
+  margin-inline: auto;
+}
+
+.page-title{
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Comic Neue', sans-serif;
+}
+
+.page-inner {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.restaurant-grid {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+}
+
+/* for future use with fun card designs! May have to change from using bootstrap's "Card" to add this design */
+.restaurant-card {
+  width: 100%;
+  max-width: none;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  background: white;
+
+  box-shadow: 0 4px 12px rgba(140, 165, 255, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.search-bar {
+  max-width: 400px;
+  margin: 0 auto 20px auto;
+}
+
+.home-title {
+  font-size: 3rem;
+  font-family: 'Comic Neue', sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
 }

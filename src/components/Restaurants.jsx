@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from 'react-router'
 import restaurantsData from "../../madisonRestaurants.json"; // adjust path
 import RestaurantSummary from "../RestaurantSummary";
 
 export default function Restaurants() {
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></link>
+    //<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></link>
     //<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const navigate = useNavigate()
 
@@ -15,16 +15,13 @@ export default function Restaurants() {
   };
 
   return (
-    <div>
-   <h1 style={{
-  textAlign: "center",
-  marginBottom: "20px",
-  fontFamily: "'Lobster', cursive",
-}}>
-  Restaurants in Madison
-</h1>
+      <Container className="text-center">
+        
+      <h1 className="page-title">
+      Restaurants in Madison
+      </h1>
    
-      <div style={{ maxWidth: "400px", margin: "0 auto 20px auto" }}>
+      <div className="search-bar">
         <input 
           type="text"
           placeholder="Search restaurants"
@@ -44,6 +41,7 @@ export default function Restaurants() {
 
       {restaurantsData.length === 0 && <p>No restaurants available!</p>}
 
+      <div className="restaurant-grid">
       <Row>
         {restaurantsData.map((restaurant) => (
           <Col
@@ -62,5 +60,6 @@ export default function Restaurants() {
         ))}
       </Row>
     </div>
+    </Container>
   );
 }

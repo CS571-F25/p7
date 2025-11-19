@@ -1,6 +1,7 @@
-import { HashRouter, Route, Routes, Link } from 'react-router'
+import { HashRouter, Route, Routes, Link, NavLink } from 'react-router'
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import { Container } from "react-bootstrap";
 
 import Reservations from './components/Reservations'
 import Restaurants from './components/Restaurants'
@@ -29,20 +30,34 @@ function App() {
     }
   }, [reservations])
 
-  return <HashRouter>
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/reservations">Reservations</Link>
-      <Link to="/restaurants">Restaurants</Link>
-    </nav>
-    <Routes>
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/reservations" element={<Reservations reservations={reservations}/>}></Route>
-      <Route path="/restaurants" element={<Restaurants/>}></Route>
-      <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations}/>}></Route>
+  return (<HashRouter>
+    <nav className="site-navbar">
+      <NavLink to="/" end className="nav-item">
+        Home
+      </NavLink>
 
-    </Routes>
+      <NavLink to="/reservations" className="nav-item">
+        Reservations
+      </NavLink>
+  
+      <NavLink to="/restaurants" className="nav-item">
+        Restaurants
+      </NavLink>
+    </nav>
+
+
+    <div className="page-wrapper">
+      
+        <Routes>
+          <Route path="/" element={<Home/>}></Route>
+          <Route path="/reservations" element={<Reservations reservations={reservations}/>}></Route>
+          <Route path="/restaurants" element={<Restaurants/>}></Route>
+          <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations}/>}></Route>
+        </Routes>
+        
+    </div>
   </HashRouter>
+  );
 }
 
 export default App
