@@ -5,7 +5,7 @@ export default function Reservations({ reservations = [] }) {
     return (
             <Row className="justify-content-center">
                 <Col md={8} className="text-center">
-                    <h1 className="page-title">Reservations</h1>
+                    <h1 className="page-title">Your Reservations</h1>
                     {reservations.length === 0 ? (
                     <p>You have no reservations yet.</p>
                     ) : (

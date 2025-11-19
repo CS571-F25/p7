@@ -6,7 +6,6 @@ import RestaurantSummary from "../RestaurantSummary";
 
 export default function Restaurants() {
     //<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"></link>
-    //<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const navigate = useNavigate()
 
   const handleReservation = (restaurant) => {

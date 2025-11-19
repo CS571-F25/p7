@@ -126,7 +126,7 @@ h1 {
   margin: 0 auto;
 }
 
-/* for future use with fun card designs! May have to change from using bootstrap's "Card" to add this design */
+/* unused: for future use with fun card designs! May have to change from using bootstrap's "Card" to add this design */
 .restaurant-card {
   width: 100%;
   max-width: none;

@@ -1,7 +1,6 @@
 import { HashRouter, Route, Routes, Link, NavLink } from 'react-router'
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import { Container } from "react-bootstrap";
 
 import Reservations from './components/Reservations'
 import Restaurants from './components/Restaurants'
@@ -54,7 +53,7 @@ function App() {
           <Route path="/restaurants" element={<Restaurants/>}></Route>
           <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations}/>}></Route>
         </Routes>
-        
+
     </div>
   </HashRouter>
   );

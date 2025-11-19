@@ -16,7 +16,7 @@ function Home(props) {
                     </p>
                 
                 <Row className="justify-content-center mt-4 card-row">
-                    <Col md={5} className="click-card search-card" onClick={() => navigate("/restaurants")}>
+                    <Col md={5} className="click-card search-bar-card" onClick={() => navigate("/restaurants")}>
                     <h3>Explore Restaurants!</h3>
                     <p>Browse a list of Madison’s favorite dining spots.</p>
                     </Col>
