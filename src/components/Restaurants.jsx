@@ -14,14 +14,19 @@ export default function Restaurants() {
   const navigate = useNavigate()
 
   const handleReservation = (restaurant) => {
-    // navigate to reserve page and pass restaurant data in state
-    navigate('/reserve', { state: { restaurant } })
+    navigate('/reserve', {
+      state: {
+        restaurant,
+        image: getImageForRestaurant(restaurant.name),
+        from: '/restaurants'
+      }
+    });
+
   };
 
   function getImageForRestaurant(name) {
     const lower = name.toLowerCase();
 
-    // Find matching file by checking file path
     for (const path in images) {
       if (path.toLowerCase().includes(`${lower}.`)) {
         return images[path]; // Returns the resolved image URL

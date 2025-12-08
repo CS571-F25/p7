@@ -28,7 +28,6 @@ export default function RestaurantSummary({ restaurant, image, onReserve }) {
             width: "100%",
             height: "180px",
             objectFit: "contain",
-            // backgroundColor: " #f0f0f0", // optional: nice backdrop behind image
             padding: "6px",
             borderRadius: "8px"
           }}

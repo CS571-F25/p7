@@ -6,9 +6,10 @@ export default function Reserve({ restaurantData, reservations, setReservations 
     const location = useLocation()
     const navigate = useNavigate()
     const data = restaurantData || location.state?.restaurant
+    const image = location.state?.image;
+
 
     useEffect(() => {
-        // If there's no restaurant data (user navigated directly), send them back
         if (!data) {
             navigate('/restaurants', { replace: true })
         }
@@ -30,7 +31,6 @@ export default function Reserve({ restaurantData, reservations, setReservations 
         return slots;
     };
 
-    // Compute reserved times for this restaurant using name & address as a key
     const reservedTimesForThisRestaurant = useMemo(() => {
         const keyName = data.name;
         const keyAddress = data.address || '';
@@ -41,13 +41,11 @@ export default function Reserve({ restaurantData, reservations, setReservations 
 
     const allSlots = useMemo(generateTimeSlots, []);
 
-    // Avoid changing dropdown options reference every render — memoize available slots
     const availableSlots = useMemo(
         () => allSlots.filter((t) => !reservedTimesForThisRestaurant.includes(t)),
         [allSlots, reservedTimesForThisRestaurant]
     );
 
-    // Start empty; we'll set to a reasonable default only when needed
     const [selectedTime, setSelectedTime] = useState('');
 
     useEffect(() => {
@@ -62,28 +60,44 @@ export default function Reserve({ restaurantData, reservations, setReservations 
         }
     }, [availableSlots]);
 
+    const from = location.state?.from || '/restaurants';
+
     const handleReserve = () => {
         if (!selectedTime) return;
         if (reservedTimesForThisRestaurant.includes(selectedTime)) {
-            // This should rarely happen because we filter on the select, but guard anyway
             alert('This time is no longer available. Please choose a different time.');
             return;
         }
 
-        // Append to reservations array in parent (App)
-        setReservations((prev) => [
-            ...prev,
-            { name: data.name, address: data.address, time: selectedTime },
-        ]);
+        setReservations((prev) => {
+            // Remove old reservation if user is changing
+            const filtered = prev.filter(
+                r =>
+                    !(
+                        r.name === data.name &&
+                        r.address === data.address &&
+                        r.time === location.state?.oldTime
+                    )
+            );
 
-        // Optionally, inform the user
+            // Add the new reservation
+            return [
+                ...filtered,
+                { name: data.name, address: data.address, time: selectedTime, image: image }
+            ];
+        });
+
+
+
         alert(`Reserved ${data.name} at ${selectedTime}`);
+
+        navigate(from);
     };
 
     return (
         <Container className="my-4">
             <Row className="justify-content-center">
-                <Col  lg={12}>
+                <Col lg={12}>
                     <Card className="shadow-sm">
                         <Card.Body>
                             <Card.Title className="mb-2">{data.name}</Card.Title>

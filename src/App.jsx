@@ -38,7 +38,7 @@ function App() {
       <NavLink to="/reservations" className="nav-item">
         Reservations
       </NavLink>
-  
+
       <NavLink to="/restaurants" className="nav-item">
         Restaurants
       </NavLink>
@@ -46,13 +46,22 @@ function App() {
 
 
     <div className="page-wrapper">
-      
-        <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/reservations" element={<Reservations reservations={reservations}/>}></Route>
-          <Route path="/restaurants" element={<Restaurants/>}></Route>
-          <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations}/>}></Route>
-        </Routes>
+
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route
+          path="/reservations"
+          element={
+            <Reservations
+              reservations={reservations}
+              setReservations={setReservations}
+            />
+          }
+        />
+
+        <Route path="/restaurants" element={<Restaurants />}></Route>
+        <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations} />}></Route>
+      </Routes>
 
     </div>
   </HashRouter>
