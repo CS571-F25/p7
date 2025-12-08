@@ -1,25 +1,38 @@
 import { Card, Button } from "react-bootstrap";
 import { useState } from "react";
 
-export default function RestaurantSummary({ restaurant, onReserve }) {
+export default function RestaurantSummary({ restaurant, image, onReserve }) {
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <Card 
-      className="h-100 shadow-sm" 
+    <Card
+      className="h-100 shadow-sm"
       style={{
         borderRadius: "12px",
         overflow: "hidden",
         transition: "transform 0.2s",
-        
+
       }}
     >
       <Card.Body className="d-flex flex-column">
-     
-        <Card.Title style={{ fontWeight: "600", fontSize: "1.25rem" , fontFamily: "'Bebas Neue', sans-serif"}}>
+
+        <Card.Title style={{ fontWeight: "600", fontSize: "1.25rem", fontFamily: "'Bebas Neue', sans-serif" }}>
           {restaurant.name}
         </Card.Title>
+        <Card.Img
+          variant="top"
+          src={image}
+          alt={restaurant.name}
+          style={{
+            width: "100%",
+            height: "180px",
+            objectFit: "contain",
+            // backgroundColor: " #f0f0f0", // optional: nice backdrop behind image
+            padding: "6px",
+            borderRadius: "8px"
+          }}
+        />
         <Card.Text style={{ fontStyle: "italic", color: "#555" }}>
           {restaurant.cuisine}
         </Card.Text>
@@ -75,7 +88,7 @@ export default function RestaurantSummary({ restaurant, onReserve }) {
         </div>
       </Card.Body>
 
-      
+
     </Card>
   );
 }
