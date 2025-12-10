@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Card, Button, Container } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import restaurantsData from "../../madisonRestaurants.json";
 
 export default function Reservations({ reservations = [], setReservations }) {
     const navigate = useNavigate();
@@ -53,19 +54,24 @@ export default function Reservations({ reservations = [], setReservations }) {
                                                 variant="outline-primary"
                                                 size="sm"
                                                 style={{ borderRadius: "6px", marginRight: "8px" }}
-                                                onClick={() =>
+                                                onClick={() => {
+                                                    const restaurants = restaurantsData.find(
+                                                        r => r.name === res.name && r.address
+                                                    );
                                                     navigate("/reserve", {
                                                         state: {
                                                             restaurant: {
                                                                 name: res.name,
                                                                 address: res.address,
+                                                                opens: restaurants.opens,
+                                                                closes: restaurants.closes,
                                                             },
                                                             oldTime: res.time,
                                                             image: res.image,
                                                             from: '/reservations'
-                                                        },
-                                                    })
-                                                }
+                                                        }
+                                                    });
+                                                }}
                                             >
                                                 Change
                                             </Button>

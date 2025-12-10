@@ -10,12 +10,18 @@ function timeToMil(timeStr) {
     return hour * 100 + minute;
 }
 
+function milToMin(mil) {
+    const hour = Math.floor(mil / 100);
+    const minute = mil % 100;
+    return hour * 60 + minute;
+}
+
 export default function Reserve({ restaurantData, reservations, setReservations }) {
     const location = useLocation()
     const navigate = useNavigate()
     const data = restaurantData || location.state?.restaurant
-    const opensAt = data.opens;
-    const closesAt = data.closes - 100;
+    const opensAt = milToMin(data.opens);
+    const closesAt = milToMin(data.closes) - 60;
     const image = location.state?.image;
 
 
@@ -54,7 +60,8 @@ export default function Reserve({ restaurantData, reservations, setReservations 
     const availableSlots = useMemo(() => {
         return allSlots.filter((t) => {
             const military = timeToMil(t);
-            const isWithinHours = military >= opensAt && military <= closesAt;
+            const min = milToMin(military);
+            const isWithinHours = min >= opensAt && min <= closesAt;
             const isNotReserved = !reservedTimesForThisRestaurant.includes(t);
             return isWithinHours && isNotReserved;
         });
