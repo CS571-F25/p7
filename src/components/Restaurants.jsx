@@ -10,6 +10,7 @@ const images = import.meta.glob('../assets/*', {
 });
 
 export default function Restaurants() {
+  
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [priceFilter, setPriceFilter] = useState("");

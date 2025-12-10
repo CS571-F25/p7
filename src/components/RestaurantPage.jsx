@@ -111,7 +111,7 @@ export default function RestaurantPage() {
                                         state: {
                                             restaurant,
                                             image,
-                                            from: "/restaurant",
+                                            from: "/restaurants",
                                         },
                                     })
                                 }

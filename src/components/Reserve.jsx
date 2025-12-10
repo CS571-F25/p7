@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router'
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap'
 
+
 function timeToMil(timeStr) {
     const [time, ampm] = timeStr.split(" ");
     let [hour, minute] = time.split(":").map(Number);
@@ -20,6 +21,10 @@ export default function Reserve({ restaurantData, reservations, setReservations 
     const location = useLocation()
     const navigate = useNavigate()
     const data = restaurantData || location.state?.restaurant
+
+    console.log("Reserve: data =", data);
+    console.log("Reserve: location.state =", location.state);
+
     const opensAt = milToMin(data.opens);
     const closesAt = milToMin(data.closes) - 60;
     const image = location.state?.image;
