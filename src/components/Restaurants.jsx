@@ -12,6 +12,9 @@ const images = import.meta.glob('../assets/*', {
 export default function Restaurants() {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const [priceFilter, setPriceFilter] = useState("");
+  const [ratingFilter, setRatingFilter] = useState("");
+  const [dietFilter, setDietFilter] = useState("");
 
   const handleReservation = (restaurant) => {
     navigate('/reserve', {
@@ -43,10 +46,18 @@ export default function Restaurants() {
   }
 
   
-  const filteredRestaurants = restaurantsData.filter((restaurant) =>
-    restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    (restaurant.cuisine && restaurant.cuisine.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const filteredRestaurants = restaurantsData.filter((restaurant) => {
+    const matchesSearch = restaurant.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    (restaurant.cuisine && restaurant.cuisine.toLowerCase().includes(searchTerm.toLowerCase()));
+
+    const matchesPrice = !priceFilter || restaurant.price === priceFilter;
+
+    const matchesRating = !ratingFilter || restaurant.rating >= parseFloat(ratingFilter);
+
+    const matchesDiet = !dietFilter || (restaurant.dietaryOptions && restaurant.dietaryOptions.includes(dietFilter));
+
+    return ( matchesSearch && matchesPrice && matchesRating && matchesDiet );
+  });
 
   return (
     <Container className="text-center">
@@ -68,6 +79,73 @@ export default function Restaurants() {
             backgroundColor: "#f9f9f9"
           }}
         />
+      </div>
+
+      <div style={{ marginTop: "10px" }}>
+        <select
+          value={priceFilter}
+          onChange={(e) => setPriceFilter(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            color: "#555",
+            fontSize: "16px",
+            backgroundColor: "#f9f9f9",
+            marginBottom: "10px",
+          }}
+        >
+          <option value="">Filter by Price</option>
+          <option value="$">$</option>
+          <option value="$$">$$</option>
+          <option value="$$$">$$$</option>
+          <option value="$$$$">$$$$</option>
+        </select>
+      </div>
+
+      <div>
+        <select
+          value={ratingFilter}
+          onChange={(e) => setRatingFilter(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            color: "#555",
+            fontSize: "16px",
+            backgroundColor: "#f9f9f9",
+            marginBottom: "10px",
+          }}
+        >
+          <option value="">Filter by Rating</option>
+          <option value="4.5">4.5★ and up</option>
+          <option value="4.0">4.0★ and up</option>
+          <option value="3.5">3.5★ and up</option>
+        </select>
+      </div>
+
+      <div>
+        <select
+          value={dietFilter}
+          onChange={(e) => setDietFilter(e.target.value)}
+          style={{
+            width: "100%",
+            padding: "10px",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            color: "#555",
+            fontSize: "16px",
+            backgroundColor: "#f9f9f9",
+            marginBottom: "20px",
+          }}
+        >
+          <option value="">Filter by Dietary Option</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Gluten-Free">Gluten-Free</option>
+        </select>
       </div>
 
       {filteredRestaurants.length === 0 && (
