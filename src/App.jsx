@@ -6,6 +6,7 @@ import Reservations from './components/Reservations'
 import Restaurants from './components/Restaurants'
 import Reserve from './components/Reserve'
 import Home from './components/Home'
+import RestaurantPage from "./components/RestaurantPage";
 
 function App() {
   // reservations is an array of objects: {name, address, time}
@@ -60,6 +61,7 @@ function App() {
         />
 
         <Route path="/restaurants" element={<Restaurants />}></Route>
+        <Route path="/restaurant" element={ <RestaurantPage/> } />
         <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations} />}></Route>
       </Routes>
 

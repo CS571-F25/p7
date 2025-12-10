@@ -2,10 +2,20 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router'
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap'
 
+function timeToMil(timeStr) {
+    const [time, ampm] = timeStr.split(" ");
+    let [hour, minute] = time.split(":").map(Number);
+    if (ampm === "PM" && hour !== 12) hour += 12;
+    if (ampm === "AM" && hour === 12) hour = 0;
+    return hour * 100 + minute;
+}
+
 export default function Reserve({ restaurantData, reservations, setReservations }) {
     const location = useLocation()
     const navigate = useNavigate()
     const data = restaurantData || location.state?.restaurant
+    const opensAt = data.opens;
+    const closesAt = data.closes - 100;
     const image = location.state?.image;
 
 
@@ -41,10 +51,14 @@ export default function Reserve({ restaurantData, reservations, setReservations 
 
     const allSlots = useMemo(generateTimeSlots, []);
 
-    const availableSlots = useMemo(
-        () => allSlots.filter((t) => !reservedTimesForThisRestaurant.includes(t)),
-        [allSlots, reservedTimesForThisRestaurant]
-    );
+    const availableSlots = useMemo(() => {
+        return allSlots.filter((t) => {
+            const military = timeToMil(t);
+            const isWithinHours = military >= opensAt && military <= closesAt;
+            const isNotReserved = !reservedTimesForThisRestaurant.includes(t);
+            return isWithinHours && isNotReserved;
+        });
+    }, [allSlots, reservedTimesForThisRestaurant, opensAt, closesAt]);
 
     const [selectedTime, setSelectedTime] = useState('');
 

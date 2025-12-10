@@ -23,6 +23,15 @@ export default function Restaurants() {
     });
   };
 
+  const handleSeePage = (restaurant) => {
+  navigate('/restaurant', {
+    state: {
+      restaurant,
+      image: getImageForRestaurant(restaurant.name)
+    }
+  });
+};
+
   function getImageForRestaurant(name) {
     const lower = name.toLowerCase();
     for (const path in images) {
@@ -80,6 +89,7 @@ export default function Restaurants() {
                 restaurant={restaurant}
                 image={getImageForRestaurant(restaurant.name)}
                 onReserve={handleReservation}
+                onSeePage={handleSeePage}
               />
             </Col>
           ))}

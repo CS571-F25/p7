@@ -4,133 +4,190 @@
       "address": "1 S Pinckney St, Madison, WI 53703",
       "cuisine": "New American / Fine Dining",
       "price": "$$$$",
-      "rating": 4.5
+      "rating": 4.5,
+      "opens": 1700,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Graze",
       "address": "1 S Pinckney St, Madison, WI 53703",
       "cuisine": "Farm-to-Table / Gastropub",
       "price": "$$",
-      "rating": 4.3
+      "rating": 4.3,
+      "opens": 1700,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "The Old Fashioned",
       "address": "23 N Pinckney St, Madison, WI 53703",
       "cuisine": "Wisconsin / Tavern",
       "price": "$$",
-      "rating": 4.3
+      "rating": 4.3,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Naples 15",
       "address": "14 W Mifflin St, Madison, WI 53703",
       "cuisine": "Italian / Steakhouse",
       "price": "$$$$",
-      "rating": 4.7
+      "rating": 4.7,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian"]
     },
     {
       "name": "Great Dane Pub & Brewing Co.",
       "address": "123 E Doty St, Madison, WI 53703",
       "cuisine": "American / Brewpub",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 0,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Tempest Oyster Bar",
       "address": "120 E Wilson St, Madison, WI 53703",
       "cuisine": "Seafood / Steakhouse",
       "price": "$$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1600,
+      "closes": 2200,
+      "dietaryOptions": ["Gluten-Free"]
     },
     {
       "name": "Heritage Tavern",
       "address": "133 E Mifflin St, Madison, WI 53703",
       "cuisine": "Contemporary American",
       "price": "$$$",
-      "rating": 4.4
+      "rating": 4.4,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Ático Lounge",
       "address": "Moxy Hotel, Madison, WI",
       "cuisine": "Latin American / Rooftop Bar",
       "price": "$$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1600,
+      "closes": 2300,
+      "dietaryOptions": ["Vegetarian"]
     },
     {
       "name": "Alimentari",
       "address": "Monroe St, Madison, WI",
       "cuisine": "Italian / Deli",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian"]
     },
     {
       "name": "Ancora Café + Bakery",
       "address": "107 King St, Madison, WI 53703",
       "cuisine": "Cafe / Bakery",
       "price": "$$",
-      "rating": 4.3
+      "rating": 4.3,
+      "opens": 700,
+      "closes": 1500,
+      "dietaryOptions": ["Vegetarian", "Vegan"]
     },
     {
       "name": "BelAir Cantina",
       "address": "111 Martin Luther King Jr Blvd, Madison, WI 53703",
       "cuisine": "Mexican",
       "price": "$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Coopers Tavern",
       "address": "20 W Mifflin St, Madison, WI 53703",
       "cuisine": "Pub / American",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 2300,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Tavernakaya",
       "address": "27 E Main St, Madison, WI 53703",
       "cuisine": "Japanese / Asian Tapas",
       "price": "$$",
-      "rating": 4.3
+      "rating": 4.3,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Red (Sushi)",
       "address": "316 W Washington Ave #100, Madison, WI 53703",
       "cuisine": "Japanese / Sushi",
       "price": "$$$",
-      "rating": 4.6
+      "rating": 4.6,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Gluten-Free"]
     },
     {
       "name": "The Boathouse (Edgewater)",
       "address": "1001 Wisconsin Pl, Madison, WI 53703",
       "cuisine": "American / Seafood",
       "price": "$$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Marigold Kitchen",
       "address": "118 S Pinckney St, Madison, WI 53703",
       "cuisine": "Breakfast / Brunch / American",
       "price": "$$",
-      "rating": 4.4
+      "rating": 4.4,
+      "opens": 700,
+      "closes": 1500,
+      "dietaryOptions": ["Vegetarian", "Vegan", "Gluten-Free"]
     },
     {
       "name": "Dotty Dumpling's Dowry",
       "address": "317 N Frances St, Madison, WI 53703",
       "cuisine": "American / Pub",
       "price": "$$",
-      "rating": 4.4
+      "rating": 4.4,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Rare Steakhouse",
       "address": "14 W Mifflin St, Madison, WI 53703",
       "cuisine": "Steakhouse",
       "price": "$$$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Gluten-Free"]
     },
     {
       "name": "Tornado Steak House",
       "address": "116 S Hamilton St, Madison, WI 53703",
       "cuisine": "Steakhouse / Supper Club",
       "price": "$$$",
-      "rating": 4.4
+      "rating": 4.4,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Gluten-Free"]
     },
     
     {
@@ -138,7 +195,10 @@
       "address": "100 State St, Madison, WI",
       "cuisine": "Pizza / American",
       "price": "$",
-      "rating": 4.4
+      "rating": 4.4,
+      "opens": 1100,
+      "closes": 0,
+      "dietaryOptions": ["Vegetarian", "Vegan"]
     },
    
     {
@@ -146,175 +206,251 @@
       "address": "101 King St, Madison, WI 53703",
       "cuisine": "Tavern / Pizza / American",
       "price": "$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Merchant",
       "address": "121 S Pinckney St, Madison, WI 53703",
       "cuisine": "Contemporary American",
       "price": "$$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Lake Vista Café - Monona Terrace",
       "address": "1 John Nolen Dr, Madison, WI 53703",
       "cuisine": "American / Café",
       "price": "$$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Sardine",
       "address": "617 Williamson St, Madison, WI 53703",
       "cuisine": "French / Bistro",
       "price": "$$$",
-      "rating": 4.3
+      "rating": 4.3,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Alchemy",
       "address": "1980 Atwood Ave, Madison, WI 53704",
       "cuisine": "American / Cocktail Bar",
       "price": "$$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1700,
+      "closes": 2300,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Bar Corallini",
       "address": "2004 Atwood Ave, Madison, WI 53704",
       "cuisine": "Italian / Wine Bar",
       "price": "$$",
-      "rating": 4.3
+      "rating": 4.3,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Mint Mark",
       "address": "1874 E Washington Ave, Madison, WI 53704",
       "cuisine": "Tapas / American",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Ahan",
       "address": "Atwood Ave, Madison, WI", 
       "cuisine": "Laotian / Southeast Asian",
       "price": "$$",
-      "rating": 4.4
+      "rating": 4.4,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Bloom Bakery",
       "address": "Madison, WI",
       "cuisine": "Vegan / Bakery",
       "price": "$",
-      "rating": 4.5
+      "rating": 4.5,
+      "opens": 700,
+      "closes": 1500,
+      "dietaryOptions": ["Vegan", "Gluten-Free", "Vegetarian"]
     },
     {
       "name": "Buck & Badger",
       "address": "115 State St, Madison, WI 53703",
       "cuisine": "Beer Tavern / Pub",
       "price": "$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1700,
+      "closes": 2300,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
+
     },
     {
       "name": "Natt Spil",
       "address": "211 King St, Madison, WI 53703",
       "cuisine": "Eclectic / Bar Food",
       "price": "$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Osteria Papavero",
       "address": "128 E Wilson St, Madison, WI 53703",
       "cuisine": "Italian",
       "price": "$$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Samba Brazilian Grill",
       "address": "240 W Gilman St, Madison, WI 53703",
       "cuisine": "Brazilian / Steakhouse",
       "price": "$$$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Gluten-Free"]
     },
     {
       "name": "Hawk's Bar & Grill",
       "address": "425 State St, Madison, WI 53703",
       "cuisine": "American / Bar",
       "price": "$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Lakeview Lounge",
       "address": "800 Langdon St, Madison, WI 53703",
       "cuisine": "American / Lounge",
       "price": "$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1600,
+      "closes": 2300,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Tutto Pasta",
       "address": "10 W Mifflin St, Madison, WI 53703",
       "cuisine": "Italian / Pasta",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian"]
     },
     {
       "name": "Haven",
       "address": "430 W Gilman St, Madison, WI",
       "cuisine": "Contemporary American",
       "price": "$$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1700,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Milio’s Sandwiches",
       "address": "116 Martin Luther King Jr Blvd, Madison, WI",
       "cuisine": "Sandwiches / Italian Deli",
       "price": "$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1000,
+      "closes": 2000,
+      "dietaryOptions": ["Vegetarian", "Vegan"]
     },
     {
       "name": "Just Veggiez",
       "address": "540 State St, Madison, WI 53703",
       "cuisine": "Vegan / Vegetarian",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegan", "Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Himal Chuli Restaurant",
       "address": "318 State St, Madison, WI 53703",
       "cuisine": "Nepali / Indian",
       "price": "$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Southern on State",
       "address": "217 State St, Madison, WI 53703",
       "cuisine": "Southern / Comfort Food",
       "price": "$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Glass Nickel Pizza Co.",
       "address": "Madison, WI (multiple locations)",
       "cuisine": "Pizza / Italian",
       "price": "$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Vegan"]
     },
     {
       "name": "Der Rathskeller",
       "address": "800 Langdon St, Madison, WI 53703",
       "cuisine": "German / Pub",
       "price": "$$",
-      "rating": 4.0
+      "rating": 4.0,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "El Águila Real",
       "address": "226 State St, Madison, WI 53703",
       "cuisine": "Mexican",
       "price": "$$",
-      "rating": 4.1
+      "rating": 4.1,
+      "opens": 1100,
+      "closes": 2200,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     },
     {
       "name": "Estación Inka",
       "address": "616 University Ave, Madison, WI 53703",
       "cuisine": "Peruvian / Latin",
       "price": "$$",
-      "rating": 4.2
+      "rating": 4.2,
+      "opens": 1100,
+      "closes": 2100,
+      "dietaryOptions": ["Vegetarian", "Gluten-Free"]
     }
   ]
   
