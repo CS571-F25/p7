@@ -1,7 +1,7 @@
 import { Card, Button } from "react-bootstrap";
 import { useState } from "react";
 
-export default function RestaurantSummary({ restaurant, image, onSeePage }) {
+export default function RestaurantSummary({ restaurant, image, onReserve, onSeePage }) {
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const [showMore, setShowMore] = useState(false);
 
