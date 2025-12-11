@@ -23,37 +23,31 @@ export default function Reservations({ reservations = [], setReservations }) {
                                 lg={3}
                                 className="mb-4"
                             >
-                                <Card
-                                    className="h-100 shadow-sm"
-                                    style={{
-                                        borderRadius: "12px",
-                                        overflow: "hidden",
-                                        transition: "transform 0.2s",
-                                    }}>
+                                <Card className="h-100 shadow-sm rounded-4">
                                     <Card.Body className="d-flex flex-column">
-                                        <Card.Title style={{ fontWeight: "600", fontSize: "1.25rem", fontFamily: "'Bebas Neue', sans-serif" }}>
+                                        <Card.Title as="h2" className="fs-5 fw-semibold">
                                             {res.name}
                                         </Card.Title>
                                         <Card.Img
                                             variant="top"
                                             src={res.image}
-                                            alt={res.name}
+                                            alt={`${res.name} reservation`}
+                                            className="w-100"
                                             style={{
-                                                width: "100%",
                                                 height: "180px",
                                                 objectFit: "contain",
                                                 padding: "6px",
                                                 borderRadius: "8px"
                                             }}
                                         />
-                                        <Card.Text style={{ fontStyle: "italic", color: "#555" }}>
+                                        <Card.Text className="fst-italic text-body-secondary">
                                             {res.address} — <strong>{res.time}</strong>
                                         </Card.Text>
                                         <div className="mt-auto d-flex justify-content-between">
                                             <Button
                                                 variant="outline-primary"
                                                 size="sm"
-                                                style={{ borderRadius: "6px", marginRight: "8px" }}
+                                                className="rounded-2 me-2"
                                                 onClick={() => {
                                                     const restaurants = restaurantsData.find(
                                                         r => r.name === res.name && r.address
@@ -81,7 +75,7 @@ export default function Reservations({ reservations = [], setReservations }) {
                                             <Button
                                                 variant="outline-danger"
                                                 size="sm"
-                                                style={{ borderRadius: "6px" }}
+                                                className="rounded-2"
                                                 onClick={() => {
                                                     setReservations(prev =>
                                                         prev.filter(r =>

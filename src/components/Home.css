@@ -4,9 +4,12 @@
   cursor: pointer;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  background-color: white;
+  background-color: var(--bs-body-bg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   font-family: 'Comic Neue', sans-serif;
+  border: 0;
+  width: 100%;
+  color: #000;
 }
 
 .click-card:hover {
@@ -14,24 +17,30 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.click-card h3 {
+.click-card:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 4px;
+}
+
+.click-card h2 {
   font-weight: 700;
   margin-bottom: 10px;
   font-size: 1.5rem;
+  color: #000;
 }
 
 .click-card p {
   margin: 0;
   font-size: 1.1rem;
-  color: #333;
+  color: #000;
 }
 
 .search-bar-card {
-  background: #e8f1ff;
-  border-left: 6px solid #4d8dff;
+  background: var(--bs-primary-bg-subtle);
+  border-left: 6px solid var(--bs-primary);
 }
 
 .reservations-card {
-  background: #ffeaea;
-  border-left: 6px solid #ff7373;
+  background: var(--bs-danger-bg-subtle);
+  border-left: 6px solid var(--bs-danger);
 }

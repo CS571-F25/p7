@@ -124,10 +124,10 @@ export default function Reserve({ restaurantData, reservations, setReservations 
         <Container className="my-4">
             <Row className="justify-content-center">
                 <Col lg={12}>
-                    <Card className="shadow-sm">
+                    <Card className="shadow-sm rounded-4">
                         <Card.Body>
-                            <Card.Title className="mb-2">{data.name}</Card.Title>
-                            <Card.Text className="mb-3">{data.address}</Card.Text>
+                            <Card.Title as="h1" className="mb-2 fs-3 fw-semibold">{data.name}</Card.Title>
+                            <Card.Text className="mb-3 text-body-secondary">{data.address}</Card.Text>
 
                             <Form>
                                 <Form.Group controlId="time-select" className="mb-3">

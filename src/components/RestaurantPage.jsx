@@ -21,7 +21,7 @@ export default function RestaurantPage() {
     const image = location.state?.image;
 
     if (!restaurant) {
-        return <div>Loading...</div>;
+        return <p className="text-center">Loading...</p>;
     }
 
     const priceDisplay = restaurant.price
@@ -32,16 +32,12 @@ export default function RestaurantPage() {
         <>
             {/* Hero Image */}
             <div
-                style={{
-                    width: "100%",
-                    height: "300px",
-                    overflow: "hidden",
-                    marginBottom: "2rem",
-                }}
+                className="w-100 mb-4"
+                style={{ height: "300px", overflow: "hidden" }}
             >
                 <img
                     src={image}
-                    alt={restaurant.name}
+                    alt={`${restaurant.name} restaurant`}
                     style={{
                         width: "100%",
                         height: "100%",
@@ -55,34 +51,34 @@ export default function RestaurantPage() {
                 <Row className="mb-4">
                     {/* Main Details */}
                     <Col lg={8}>
-                        <h1 style={{ fontWeight: 700 }}>{restaurant.name}</h1>
+                        <h1 className="fw-bold">{restaurant.name}</h1>
 
-                        <p style={{ fontSize: "1.15rem", color: "#444" }}>
+                        <p className="fs-5">
                             <strong>Address:</strong> {restaurant.address}
                         </p>
 
-                        <p style={{ fontSize: "1.15rem" }}>
+                        <p className="fs-5">
                             <strong>Cuisine:</strong> {restaurant.cuisine}
                         </p>
 
-                        <p style={{ fontSize: "1.15rem" }}>
+                        <p className="fs-5">
                             <strong>Rating:</strong>{" "}
-                            <span style={{ color: "#f4b400" }}>
+                            <span className="text-warning">
                                 {"★".repeat(Math.round(restaurant.rating))}
                             </span>{" "}
                             ({restaurant.rating})
                         </p>
 
-                        <p style={{ fontSize: "1.15rem" }}>
+                        <p className="fs-5">
                             <strong>Price:</strong> {priceDisplay}
                         </p>
 
-                        <h4 className="mt-4">Hours</h4>
+                        <h2 className="mt-4 h4">Hours</h2>
                         <p>
                             {formatTime(restaurant.opens)} – {formatTime(restaurant.closes)}
                         </p>
 
-                        <h4 className="mt-4">Dietary Options</h4>
+                        <h2 className="mt-4 h4">Dietary Options</h2>
                         {restaurant.dietaryOptions && restaurant.dietaryOptions.length > 0 ? (
                             <ul>
                                 {restaurant.dietaryOptions.map((opt, idx) => (
@@ -97,9 +93,9 @@ export default function RestaurantPage() {
                     {/* Reservation Sidebar */}
                     <Col lg={4}>
                         <Card className="p-3 shadow-sm" style={{ borderRadius: "12px" }}>
-                            <h4 style={{ marginBottom: "1rem" }}>Reserve a Table</h4>
+                            <h2 className="h4" style={{ marginBottom: "1rem" }}>Reserve a Table</h2>
 
-                            <p style={{ color: "#666" }}>
+                            <p className="text-body-secondary">
                                 Choose a time and complete your reservation.
                             </p>
 

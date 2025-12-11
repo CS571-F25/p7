@@ -2,8 +2,8 @@ import { Card, Button } from "react-bootstrap";
 import { useState } from "react";
 
 export default function RestaurantSummary({ restaurant, image, onReserve, onSeePage }) {
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"></link>
   const [showMore, setShowMore] = useState(false);
+  const detailsId = `restaurant-details-${restaurant.name.replace(/\s+/g, "-" ).toLowerCase()}`;
 
   return (
     <Card
@@ -17,13 +17,13 @@ export default function RestaurantSummary({ restaurant, image, onReserve, onSeeP
     >
       <Card.Body className="d-flex flex-column">
 
-        <Card.Title style={{ fontWeight: "600", fontSize: "1.25rem", fontFamily: "'Bebas Neue', sans-serif" }}>
+        <Card.Title as="h3" style={{ fontWeight: "600", fontSize: "1.25rem", fontFamily: "'Bebas Neue', sans-serif" }}>
           {restaurant.name}
         </Card.Title>
         <Card.Img
           variant="top"
           src={image}
-          alt={restaurant.name}
+          alt={`${restaurant.name} restaurant`}
           style={{
             width: "100%",
             height: "180px",
@@ -32,14 +32,14 @@ export default function RestaurantSummary({ restaurant, image, onReserve, onSeeP
             borderRadius: "8px"
           }}
         />
-        <Card.Text style={{ fontStyle: "italic", color: "#555" }}>
+        <Card.Text className="fst-italic text-body-secondary">
           {restaurant.cuisine}
         </Card.Text>
 
 
         {showMore && (
-          <div>
-            <Card.Text style={{ marginTop: "10px", color: "#333" }}>
+          <div id={detailsId}>
+            <Card.Text style={{ marginTop: "10px" }}>
               <strong>Address:</strong> {restaurant.address} <br />
               <strong>Price:</strong> {restaurant.price} <br />
               <strong>Rating:</strong> {restaurant.rating} ⭐
@@ -51,15 +51,12 @@ export default function RestaurantSummary({ restaurant, image, onReserve, onSeeP
                   Available Reservation Times:
                 </p>
                 {restaurant.reservationTimes.map((time) => (
-                  <Button
+                  <span
                     key={time}
-                    size="sm"
-                    variant="outline-primary"
-                    className="me-2 mb-2"
-                    style={{ borderRadius: "6px" }}
+                    className="badge text-bg-primary rounded-pill me-2 mb-2"
                   >
                     {time}
-                  </Button>
+                  </span>
                 ))}
               </div>
             )}
@@ -71,6 +68,8 @@ export default function RestaurantSummary({ restaurant, image, onReserve, onSeeP
             variant="outline-primary"
             size="sm"
             onClick={() => setShowMore(!showMore)}
+            aria-expanded={showMore}
+            aria-controls={detailsId}
             style={{ borderRadius: "6px" }}
           >
             {showMore ? "Show Less" : "Show More"}

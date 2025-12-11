@@ -30,43 +30,55 @@ function App() {
     }
   }, [reservations])
 
-  return (<HashRouter>
-    <nav className="site-navbar">
-      <NavLink to="/" end className="nav-item">
-        Home
-      </NavLink>
+  return (
+    <HashRouter>
+      <a className="skip-link" href="#main-content">Skip to main content</a>
+      <nav className="site-navbar" aria-label="Primary">
+        <NavLink
+          to="/"
+          end
+          className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
+        >
+          Home
+        </NavLink>
 
-      <NavLink to="/reservations" className="nav-item">
-        Reservations
-      </NavLink>
+        <NavLink
+          to="/reservations"
+          className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
+        >
+          Reservations
+        </NavLink>
 
-      <NavLink to="/restaurants" className="nav-item">
-        Restaurants
-      </NavLink>
-    </nav>
+        <NavLink
+          to="/restaurants"
+          className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
+        >
+          Restaurants
+        </NavLink>
+      </nav>
 
+      <main id="main-content" className="page-wrapper" tabIndex="-1">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/reservations"
+            element={
+              <Reservations
+                reservations={reservations}
+                setReservations={setReservations}
+              />
+            }
+          />
 
-    <div className="page-wrapper">
-
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route
-          path="/reservations"
-          element={
-            <Reservations
-              reservations={reservations}
-              setReservations={setReservations}
-            />
-          }
-        />
-
-        <Route path="/restaurants" element={<Restaurants />}></Route>
-        <Route path="/restaurant" element={ <RestaurantPage/> } />
-        <Route path="/reserve" element={<Reserve reservations={reservations} setReservations={setReservations} />}></Route>
-      </Routes>
-
-    </div>
-  </HashRouter>
+          <Route path="/restaurants" element={<Restaurants />} />
+          <Route path="/restaurant" element={<RestaurantPage />} />
+          <Route
+            path="/reserve"
+            element={<Reserve reservations={reservations} setReservations={setReservations} />}
+          />
+        </Routes>
+      </main>
+    </HashRouter>
   );
 }
 
