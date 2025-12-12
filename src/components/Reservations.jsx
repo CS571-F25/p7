@@ -1,10 +1,40 @@
 import React from 'react';
-import { Row, Col, Card, Button, Container } from "react-bootstrap";
+import { Row, Container } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import restaurantsData from "../../madisonRestaurants.json";
+import ReservationCard from "./ReservationCard";
 
 export default function Reservations({ reservations = [], setReservations }) {
     const navigate = useNavigate();
+
+    const handleChangeReservation = (res) => {
+        const restaurants = restaurantsData.find(
+            r => r.name === res.name && r.address
+        );
+        navigate("/reserve", {
+            state: {
+                restaurant: {
+                    name: res.name,
+                    address: res.address,
+                    opens: restaurants.opens,
+                    closes: restaurants.closes,
+                },
+                oldTime: res.time,
+                image: res.image,
+                from: '/reservations'
+            }
+        });
+    };
+
+    const handleCancelReservation = (res) => {
+        setReservations(prev =>
+            prev.filter(r =>
+                !(r.name === res.name &&
+                    r.address === res.address &&
+                    r.time === res.time)
+            )
+        );
+    };
 
     return (
         <Container className="text-center">
@@ -15,83 +45,12 @@ export default function Reservations({ reservations = [], setReservations }) {
                 ) : (
                     <Row>
                         {reservations.map((res, idx) => (
-                            <Col
+                            <ReservationCard 
                                 key={res.name + res.time}
-                                xs={12}
-                                sm={6}
-                                md={4}
-                                lg={3}
-                                className="mb-4"
-                            >
-                                <Card className="h-100 shadow-sm rounded-4">
-                                    <Card.Body className="d-flex flex-column">
-                                        <Card.Title as="h2" className="fs-5 fw-semibold">
-                                            {res.name}
-                                        </Card.Title>
-                                        <Card.Img
-                                            variant="top"
-                                            src={res.image}
-                                            alt={`${res.name} reservation`}
-                                            className="w-100"
-                                            style={{
-                                                height: "180px",
-                                                objectFit: "contain",
-                                                padding: "6px",
-                                                borderRadius: "8px"
-                                            }}
-                                        />
-                                        <Card.Text className="fst-italic text-body-secondary">
-                                            {res.address} — <strong>{res.time}</strong>
-                                        </Card.Text>
-                                        <div className="mt-auto d-flex justify-content-between">
-                                            <Button
-                                                variant="outline-primary"
-                                                size="sm"
-                                                className="rounded-2 me-2"
-                                                onClick={() => {
-                                                    const restaurants = restaurantsData.find(
-                                                        r => r.name === res.name && r.address
-                                                    );
-                                                    navigate("/reserve", {
-                                                        state: {
-                                                            restaurant: {
-                                                                name: res.name,
-                                                                address: res.address,
-                                                                opens: restaurants.opens,
-                                                                closes: restaurants.closes,
-                                                            },
-                                                            oldTime: res.time,
-                                                            image: res.image,
-                                                            from: '/reservations'
-                                                        }
-                                                    });
-                                                }}
-                                            >
-                                                Change
-                                            </Button>
-
-
-
-                                            <Button
-                                                variant="outline-danger"
-                                                size="sm"
-                                                className="rounded-2"
-                                                onClick={() => {
-                                                    setReservations(prev =>
-                                                        prev.filter(r =>
-                                                            !(r.name === res.name &&
-                                                                r.address === res.address &&
-                                                                r.time === res.time)
-                                                        )
-                                                    );
-                                                }}
-                                            >
-                                                Cancel
-                                            </Button>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
+                                res={res}
+                                onChangeReservation={handleChangeReservation}
+                                onCancelReservation={handleCancelReservation}
+                            />
                         ))}
                     </Row>
                 )}

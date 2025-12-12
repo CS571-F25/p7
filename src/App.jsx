@@ -7,6 +7,7 @@ import Restaurants from './components/Restaurants'
 import Reserve from './components/Reserve'
 import Home from './components/Home'
 import RestaurantPage from "./components/RestaurantPage";
+import Navigation from './components/Navigation'
 
 function App() {
   // reservations is an array of objects: {name, address, time}
@@ -33,29 +34,7 @@ function App() {
   return (
     <HashRouter>
       <a className="skip-link" href="#main-content">Skip to main content</a>
-      <nav className="site-navbar" aria-label="Primary">
-        <NavLink
-          to="/"
-          end
-          className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
-        >
-          Home
-        </NavLink>
-
-        <NavLink
-          to="/reservations"
-          className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
-        >
-          Reservations
-        </NavLink>
-
-        <NavLink
-          to="/restaurants"
-          className={({ isActive }) => (isActive ? "nav-item active" : "nav-item")}
-        >
-          Restaurants
-        </NavLink>
-      </nav>
+      <Navigation />
 
       <main id="main-content" className="page-wrapper" tabIndex="-1">
         <Routes>
